@@ -1,6 +1,7 @@
 package net.maplenotes.furnacetools;
 
 import net.maplenotes.furnacetools.materials.Material;
+import net.maplenotes.furnacetools.materials.MaterialDry;
 import net.maplenotes.furnacetools.materials.MaterialFurnace;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -19,6 +20,7 @@ public class FurnaceToolsRegistry {
 
 	static {
 		FurnaceToolsRegistry.AddToolMaterial(new MaterialFurnace());
+		FurnaceToolsRegistry.AddToolMaterial(new MaterialDry());
 	}
 
 }
