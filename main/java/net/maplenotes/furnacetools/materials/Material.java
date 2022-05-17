@@ -3,6 +3,7 @@ package net.maplenotes.furnacetools.materials;
 public abstract class Material {
 
 	public abstract String Name();
+    public abstract String UnlocalizedMaterialCategory();
     public abstract int HarvestLevel();
     public abstract int MaxUses();
     public abstract float Efficiency();
