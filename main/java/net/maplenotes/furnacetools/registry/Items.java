@@ -1,5 +1,6 @@
 package net.maplenotes.furnacetools.registry;
 
+import net.maplenotes.furnacetools.FurnaceTools;
 import net.maplenotes.furnacetools.materials.MaterialDry;
 import net.maplenotes.furnacetools.materials.MaterialFurnace;
 import net.maplenotes.furnacetools.materials.MaterialLava;
@@ -13,10 +14,16 @@ import net.maplenotes.furnacetools.tools.smelting.SmeltingHoe;
 import net.maplenotes.furnacetools.tools.smelting.SmeltingPickaxe;
 import net.maplenotes.furnacetools.tools.smelting.SmeltingShovel;
 import net.maplenotes.furnacetools.tools.smelting.SmeltingSword;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class Items {
-    
+
+    public static Item MaterialDry = new Item()
+        .setUnlocalizedName("DryFurnaceMaterial")
+        .setRegistryName(FurnaceTools.MODID, "material_item_dry")
+        .setCreativeTab(CreativeTabs.MATERIALS);
+
     public static Item StandardFurnaceAxe = new FurnaceAxe(new MaterialFurnace());
     public static Item StandardFurnacePickaxe = new FurnacePickaxe(new MaterialFurnace());
     public static Item StandardFurnaceShovel = new FurnaceShovel(new MaterialFurnace());
