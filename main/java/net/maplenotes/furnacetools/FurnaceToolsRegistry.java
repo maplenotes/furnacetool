@@ -34,6 +34,18 @@ public class FurnaceToolsRegistry {
 		registry.register(Items.StandardFurnaceShovel);
 		registry.register(Items.StandardFurnaceSword);
 		registry.register(Items.StandardFurnaceHoe);
+
+		registry.register(Items.DryFurnaceAxe);
+		registry.register(Items.DryFurnacePickaxe);
+		registry.register(Items.DryFurnaceShovel);
+		registry.register(Items.DryFurnaceSword);
+		registry.register(Items.DryFurnaceHoe);
+
+		registry.register(Items.LavaFurnaceAxe);
+		registry.register(Items.LavaFurnacePickaxe);
+		registry.register(Items.LavaFurnaceShovel);
+		registry.register(Items.LavaFurnaceSword);
+		registry.register(Items.LavaFurnaceHoe);
 	}
 
 }

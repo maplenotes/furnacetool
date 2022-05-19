@@ -5,7 +5,7 @@ import net.maplenotes.furnacetools.tools.FurnaceShovel;
 
 public class SmeltingShovel extends FurnaceShovel {
 
-	protected SmeltingShovel(Material material) {
+	public SmeltingShovel(Material material) {
 		super(material);
 	}
 	

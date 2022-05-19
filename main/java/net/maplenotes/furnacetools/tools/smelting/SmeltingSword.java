@@ -5,7 +5,7 @@ import net.maplenotes.furnacetools.tools.FurnaceSword;
 
 public class SmeltingSword extends FurnaceSword {
 
-	protected SmeltingSword(Material material) {
+	public SmeltingSword(Material material) {
 		super(material);
 	}
 	

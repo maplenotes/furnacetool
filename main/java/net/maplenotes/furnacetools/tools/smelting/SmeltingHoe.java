@@ -5,7 +5,7 @@ import net.maplenotes.furnacetools.tools.FurnaceHoe;
 
 public class SmeltingHoe extends FurnaceHoe {
 
-	protected SmeltingHoe(Material material) {
+	public SmeltingHoe(Material material) {
 		super(material);
 	}
 	

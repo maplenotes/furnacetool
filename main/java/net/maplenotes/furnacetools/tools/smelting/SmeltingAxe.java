@@ -5,7 +5,7 @@ import net.maplenotes.furnacetools.tools.FurnaceAxe;
 
 public class SmeltingAxe extends FurnaceAxe {
 
-	protected SmeltingAxe(Material material) {
+	public SmeltingAxe(Material material) {
 		super(material);
 	}
 	
