@@ -11,7 +11,7 @@ public class FurnaceAxe extends ItemAxe {
 	public FurnaceAxe(Material material) {
 		super(ToolMaterial.valueOf(material.Name()), material.AttackDamage(), material.AttackSpeed());
 		this.setUnlocalizedName(material.UnlocalizedMaterialCategory() + FurnaceAxe.UnlocalizedItemName);
-		this.setRegistryName(FurnaceTools.MODID, this.getUnlocalizedName());
+		this.setRegistryName(FurnaceTools.MODID, (material.Name() + "_" + FurnaceAxe.UnlocalizedItemName).toLowerCase());
 	}
 	
 }

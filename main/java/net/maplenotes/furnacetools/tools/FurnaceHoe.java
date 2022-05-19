@@ -11,7 +11,7 @@ public class FurnaceHoe extends ItemHoe {
 	public FurnaceHoe(Material material) {
 		super(ToolMaterial.valueOf(material.Name()));
 		this.setUnlocalizedName(material.UnlocalizedMaterialCategory() + FurnaceHoe.UnlocalizedItemName);
-		this.setRegistryName(FurnaceTools.MODID, this.getUnlocalizedName());
+		this.setRegistryName(FurnaceTools.MODID, (material.Name() + "_" + FurnaceHoe.UnlocalizedItemName).toLowerCase());
 	}
 	
 }

@@ -11,7 +11,7 @@ public class FurnaceSword extends ItemSword {
 	public FurnaceSword(Material material) {
 		super(ToolMaterial.valueOf(material.Name()));
 		this.setUnlocalizedName(material.UnlocalizedMaterialCategory() + FurnaceSword.UnlocalizedItemName);
-		this.setRegistryName(FurnaceTools.MODID, this.getUnlocalizedName());
+		this.setRegistryName(FurnaceTools.MODID, (material.Name() + "_" + FurnaceSword.UnlocalizedItemName).toLowerCase());
 	}
 	
 }

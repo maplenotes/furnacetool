@@ -11,7 +11,7 @@ public class FurnacePickaxe extends ItemPickaxe {
 	public FurnacePickaxe(Material material) {
 		super(ToolMaterial.valueOf(material.Name()));
 		this.setUnlocalizedName(material.UnlocalizedMaterialCategory() + FurnacePickaxe.UnlocalizedItemName);
-		this.setRegistryName(FurnaceTools.MODID, this.getUnlocalizedName());
+		this.setRegistryName(FurnaceTools.MODID, (material.Name() + "_" + FurnacePickaxe.UnlocalizedItemName).toLowerCase());
 	}
 
 }

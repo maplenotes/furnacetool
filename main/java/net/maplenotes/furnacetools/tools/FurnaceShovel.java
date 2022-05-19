@@ -11,7 +11,7 @@ public class FurnaceShovel extends ItemSpade {
 	public FurnaceShovel(Material material) {
 		super(ToolMaterial.valueOf(material.Name()));
 		this.setUnlocalizedName(material.UnlocalizedMaterialCategory() + FurnaceShovel.UnlocalizedItemName);
-		this.setRegistryName(FurnaceTools.MODID, this.getUnlocalizedName());
+		this.setRegistryName(FurnaceTools.MODID, (material.Name() + "_" + FurnaceShovel.UnlocalizedItemName).toLowerCase());
 	}
 
 }
