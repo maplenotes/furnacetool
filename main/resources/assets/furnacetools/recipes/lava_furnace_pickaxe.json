@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "furnacetools",
+    "ingredients": [
+        {
+            "item": "furnacetools:standard_furnacepickaxe"
+        },
+        {
+            "item": "minecraft:lava_bucket"
+        }
+    ],
+    "result": {
+        "item": "furnacetools:lava_furnacepickaxe",
+        "count": 1
+    }
+}
