@@ -5,11 +5,15 @@ import net.maplenotes.furnacetools.materials.MaterialDry;
 import net.maplenotes.furnacetools.materials.MaterialFurnace;
 import net.maplenotes.furnacetools.materials.MaterialLava;
 import net.maplenotes.furnacetools.registry.Items;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class FurnaceToolsRegistry {
+
+	private static final String VARIANT_INVENTRY = "inventory";
 	
 	private static void AddToolMaterial(Material material){
 		EnumHelper.addToolMaterial(
@@ -29,6 +33,8 @@ public class FurnaceToolsRegistry {
 	}
 
 	public static void RegistrationItems(IForgeRegistry<Item> registry) {
+		registry.register(Items.MaterialDry);
+
 		registry.register(Items.StandardFurnaceAxe);
 		registry.register(Items.StandardFurnacePickaxe);
 		registry.register(Items.StandardFurnaceShovel);
@@ -46,6 +52,10 @@ public class FurnaceToolsRegistry {
 		registry.register(Items.LavaFurnaceShovel);
 		registry.register(Items.LavaFurnaceSword);
 		registry.register(Items.LavaFurnaceHoe);
+	}
+
+	public static void RegistrationModels() {
+		ModelLoader.setCustomModelResourceLocation(Items.MaterialDry, 0, new ModelResourceLocation(Items.MaterialDry.getRegistryName(), VARIANT_INVENTRY));
 	}
 
 }

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:furnace"
+        },
+        {
+            "item": "minecraft:coal",
+            "data": 1,
+            "count": 4
+        }
+    ],
+    "result": {
+        "item": "furnacetools:material_item_dry",
+        "count": 1
+    }
+}
