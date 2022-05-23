@@ -3,7 +3,7 @@
     "group": "furnacetools",
     "ingredients": [
         {
-            "item": "furnacetools:standard_furnaceaxe"
+            "item": "furnacetools:standard_furnace_furnaceaxe"
         },
         {
             "item": "minecraft:lava_bucket"

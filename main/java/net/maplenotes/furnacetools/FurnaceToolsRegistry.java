@@ -51,7 +51,6 @@ public class FurnaceToolsRegistry {
 		registry.register(Items.LavaFurnacePickaxe);
 		registry.register(Items.LavaFurnaceShovel);
 		registry.register(Items.LavaFurnaceSword);
-		registry.register(Items.LavaFurnaceHoe);
 	}
 
 	public static void RegistrationModels() {
@@ -68,6 +67,11 @@ public class FurnaceToolsRegistry {
 		ModelLoader.setCustomModelResourceLocation(Items.DryFurnaceShovel, 0, new ModelResourceLocation(Items.DryFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.DryFurnaceSword, 0, new ModelResourceLocation(Items.DryFurnaceSword.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.DryFurnaceHoe, 0, new ModelResourceLocation(Items.DryFurnaceHoe.getRegistryName(), VARIANT_INVENTRY));
+
+		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnaceAxe, 0, new ModelResourceLocation(Items.LavaFurnaceAxe.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnacePickaxe, 0, new ModelResourceLocation(Items.LavaFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnaceShovel, 0, new ModelResourceLocation(Items.LavaFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnaceSword, 0, new ModelResourceLocation(Items.LavaFurnaceSword.getRegistryName(), VARIANT_INVENTRY));
 	}
 
 }

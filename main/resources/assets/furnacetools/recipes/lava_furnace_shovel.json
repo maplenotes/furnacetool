@@ -3,7 +3,7 @@
     "group": "furnacetools",
     "ingredients": [
         {
-            "item": "furnacetools:standard_furnaceshovel"
+            "item": "furnacetools:standard_furnace_furnaceshovel"
         },
         {
             "item": "minecraft:lava_bucket"
