@@ -62,6 +62,12 @@ public class FurnaceToolsRegistry {
 		ModelLoader.setCustomModelResourceLocation(Items.StandardFurnaceShovel, 0, new ModelResourceLocation(Items.StandardFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.StandardFurnaceSword, 0, new ModelResourceLocation(Items.StandardFurnaceSword.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.StandardFurnaceHoe, 0, new ModelResourceLocation(Items.StandardFurnaceHoe.getRegistryName(), VARIANT_INVENTRY));
+
+		ModelLoader.setCustomModelResourceLocation(Items.DryFurnaceAxe, 0, new ModelResourceLocation(Items.DryFurnaceAxe.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.DryFurnacePickaxe, 0, new ModelResourceLocation(Items.DryFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.DryFurnaceShovel, 0, new ModelResourceLocation(Items.DryFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.DryFurnaceSword, 0, new ModelResourceLocation(Items.DryFurnaceSword.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.DryFurnaceHoe, 0, new ModelResourceLocation(Items.DryFurnaceHoe.getRegistryName(), VARIANT_INVENTRY));
 	}
 
 }
