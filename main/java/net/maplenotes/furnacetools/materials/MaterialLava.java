@@ -20,7 +20,7 @@ public class MaterialLava extends Material {
 
 	@Override
 	public int HarvestLevel() {
-		return ToolMaterial.IRON.getHarvestLevel();
+		return ToolMaterial.STONE.getHarvestLevel();
 	}
 
 	@Override
