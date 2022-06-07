@@ -5,7 +5,7 @@ import net.minecraft.item.Item.ToolMaterial;
 public class MaterialFurnace extends Material {
 
 	private static float EnduranceRate = 8.0F;
-    private static final String MaterialName = "standard_furnace";
+    public static final String MaterialName = "standard_furnace";
 	private static final String UnlocalizedCategoryName = "Standard";
 
 	@Override

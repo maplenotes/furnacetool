@@ -5,7 +5,7 @@ import net.minecraft.item.Item.ToolMaterial;
 public class MaterialLava extends Material {
 
 	private static float EnduranceRate = 4.0F;
-    private static final String MaterialName = "lava";
+    public static final String MaterialName = "lava";
 	private static final String UnlocalizedCategoryName = "Lava";
 
 	@Override

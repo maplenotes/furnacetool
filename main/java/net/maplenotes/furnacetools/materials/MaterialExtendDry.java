@@ -5,7 +5,7 @@ import net.minecraft.item.Item.ToolMaterial;
 public class MaterialExtendDry extends Material {
 	
 	private static float EnduranceRate = 6.0F * 10;
-    private static final String MaterialName = "extended_dry";
+    public static final String MaterialName = "extended_dry";
 	private static final String UnlocalizedCategoryName = "ExtendDry";
 
 	@Override
