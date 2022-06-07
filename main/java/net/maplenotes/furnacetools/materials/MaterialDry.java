@@ -25,7 +25,7 @@ public class MaterialDry extends Material {
 
 	@Override
 	public int MaxUses() {
-		return (int)(ToolMaterial.STONE.getHarvestLevel() * MaterialDry.EnduranceRate);
+		return (int)(ToolMaterial.STONE.getMaxUses() * MaterialDry.EnduranceRate);
 	}
 
 	@Override

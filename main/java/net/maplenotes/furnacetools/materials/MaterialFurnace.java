@@ -25,7 +25,7 @@ public class MaterialFurnace extends Material {
 
 	@Override
 	public int MaxUses() {
-		return (int)(ToolMaterial.STONE.getHarvestLevel() * MaterialFurnace.EnduranceRate);
+		return (int)(ToolMaterial.STONE.getMaxUses() * MaterialFurnace.EnduranceRate);
 	}
 
 	@Override

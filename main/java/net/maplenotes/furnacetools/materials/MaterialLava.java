@@ -25,7 +25,7 @@ public class MaterialLava extends Material {
 
 	@Override
 	public int MaxUses() {
-		return (int)(ToolMaterial.STONE.getHarvestLevel() * MaterialLava.EnduranceRate);
+		return (int)(ToolMaterial.STONE.getMaxUses() * MaterialLava.EnduranceRate);
 	}
 
 	@Override
