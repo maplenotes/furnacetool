@@ -29,6 +29,7 @@ public class EventFacade {
 
         switch(materialName) {
             case MaterialDry.MaterialName:
+                // fall through
             case MaterialLava.MaterialName:
                 SmeltingBehavior.onHarvest(event);
             default:
