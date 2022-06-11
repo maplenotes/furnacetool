@@ -1,6 +1,8 @@
 package net.maplenotes.furnacetools.event;
 
 import net.maplenotes.furnacetools.materials.MaterialDry;
+import net.maplenotes.furnacetools.materials.MaterialExtendDry;
+import net.maplenotes.furnacetools.materials.MaterialExtendFurnace;
 import net.maplenotes.furnacetools.materials.MaterialLava;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -32,6 +34,12 @@ public class EventFacade {
                 // fall through
             case MaterialLava.MaterialName:
                 SmeltingBehavior.onHarvest(event);
+
+            case MaterialExtendFurnace.MaterialName:
+                // fall through
+            case MaterialExtendDry.MaterialName:
+                ExtendCutBehavior.onHarvest(event);
+
             default:
                 // nothing to do.
         }
