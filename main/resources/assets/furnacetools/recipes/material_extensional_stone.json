@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "furnacetools",
+    "pattern": [
+        " R ",
+        "RIR",
+        " R "
+    ],
+    "key": {
+        "R":
+        {
+            "item": "minecraft:redstone"
+        },
+        "I":
+        {
+            "item": "minecraft:iron_block"
+        }
+    },
+    "result": {
+        "item": "furnacetools:material_extensional_stone"
+    }
+}

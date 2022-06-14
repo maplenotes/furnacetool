@@ -2,6 +2,8 @@ package net.maplenotes.furnacetools;
 
 import net.maplenotes.furnacetools.materials.Material;
 import net.maplenotes.furnacetools.materials.MaterialDry;
+import net.maplenotes.furnacetools.materials.MaterialExtendDry;
+import net.maplenotes.furnacetools.materials.MaterialExtendFurnace;
 import net.maplenotes.furnacetools.materials.MaterialFurnace;
 import net.maplenotes.furnacetools.materials.MaterialLava;
 import net.maplenotes.furnacetools.registry.Items;
@@ -30,10 +32,13 @@ public class FurnaceToolsRegistry {
 		FurnaceToolsRegistry.AddToolMaterial(new MaterialFurnace());
 		FurnaceToolsRegistry.AddToolMaterial(new MaterialDry());
 		FurnaceToolsRegistry.AddToolMaterial(new MaterialLava());
+		FurnaceToolsRegistry.AddToolMaterial(new MaterialExtendFurnace());
+		FurnaceToolsRegistry.AddToolMaterial(new MaterialExtendDry());
 	}
 
 	public static void RegistrationItems(IForgeRegistry<Item> registry) {
 		registry.register(Items.MaterialDry);
+		registry.register(Items.MaterialExtensionalStone);
 
 		registry.register(Items.StandardFurnaceAxe);
 		registry.register(Items.StandardFurnacePickaxe);
@@ -51,10 +56,13 @@ public class FurnaceToolsRegistry {
 		registry.register(Items.LavaFurnacePickaxe);
 		registry.register(Items.LavaFurnaceShovel);
 		registry.register(Items.LavaFurnaceSword);
+
+		registry.register(Items.ExtendFurnacePickaxe);
 	}
 
 	public static void RegistrationModels() {
 		ModelLoader.setCustomModelResourceLocation(Items.MaterialDry, 0, new ModelResourceLocation(Items.MaterialDry.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.MaterialExtensionalStone, 0, new ModelResourceLocation(Items.MaterialExtensionalStone.getRegistryName(), VARIANT_INVENTRY));
 
 		ModelLoader.setCustomModelResourceLocation(Items.StandardFurnaceAxe, 0, new ModelResourceLocation(Items.StandardFurnaceAxe.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.StandardFurnacePickaxe, 0, new ModelResourceLocation(Items.StandardFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
@@ -72,6 +80,8 @@ public class FurnaceToolsRegistry {
 		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnacePickaxe, 0, new ModelResourceLocation(Items.LavaFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnaceShovel, 0, new ModelResourceLocation(Items.LavaFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnaceSword, 0, new ModelResourceLocation(Items.LavaFurnaceSword.getRegistryName(), VARIANT_INVENTRY));
+
+		ModelLoader.setCustomModelResourceLocation(Items.ExtendFurnacePickaxe, 0, new ModelResourceLocation(Items.ExtendFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
 	}
 
 }

@@ -2,6 +2,7 @@ package net.maplenotes.furnacetools.registry;
 
 import net.maplenotes.furnacetools.FurnaceTools;
 import net.maplenotes.furnacetools.materials.MaterialDry;
+import net.maplenotes.furnacetools.materials.MaterialExtendFurnace;
 import net.maplenotes.furnacetools.materials.MaterialFurnace;
 import net.maplenotes.furnacetools.materials.MaterialLava;
 import net.maplenotes.furnacetools.tools.FurnaceAxe;
@@ -9,6 +10,7 @@ import net.maplenotes.furnacetools.tools.FurnaceHoe;
 import net.maplenotes.furnacetools.tools.FurnacePickaxe;
 import net.maplenotes.furnacetools.tools.FurnaceShovel;
 import net.maplenotes.furnacetools.tools.FurnaceSword;
+import net.maplenotes.furnacetools.tools.extendcut.ExtendCutPickaxe;
 import net.maplenotes.furnacetools.tools.smelting.SmeltingAxe;
 import net.maplenotes.furnacetools.tools.smelting.SmeltingHoe;
 import net.maplenotes.furnacetools.tools.smelting.SmeltingPickaxe;
@@ -22,6 +24,11 @@ public class Items {
     public static Item MaterialDry = new Item()
         .setUnlocalizedName("DryFurnaceMaterial")
         .setRegistryName(FurnaceTools.MODID, "material_item_dry")
+        .setCreativeTab(CreativeTabs.MATERIALS);
+
+    public static Item MaterialExtensionalStone = new Item()
+        .setUnlocalizedName("ExtensionalStone")
+        .setRegistryName(FurnaceTools.MODID, "material_extensional_stone")
         .setCreativeTab(CreativeTabs.MATERIALS);
 
     public static Item StandardFurnaceAxe = new FurnaceAxe(new MaterialFurnace());
@@ -41,5 +48,7 @@ public class Items {
     public static Item LavaFurnaceShovel = new SmeltingShovel(new MaterialLava());
     public static Item LavaFurnaceSword = new SmeltingSword(new MaterialLava());
     public static Item LavaFurnaceHoe = new SmeltingHoe(new MaterialLava());
+
+    public static Item ExtendFurnacePickaxe = new ExtendCutPickaxe(new MaterialExtendFurnace());
 
 }
