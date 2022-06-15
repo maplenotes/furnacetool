@@ -7,6 +7,7 @@ import net.maplenotes.furnacetools.materials.MaterialLava;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 
 public class EventFacade {
@@ -46,6 +47,35 @@ public class EventFacade {
                 // nothing to do.
         }
 
+    }
+
+    // プレイヤーがブロックを破壊しようとするなどして左ボタンを押し続けている間呼ばれるイベント
+    public static void onInteract(LeftClickBlock event) {
+
+        ItemStack stack = event.getItemStack();
+
+        if(!(stack.getItem() instanceof ItemTool)) {
+            return;
+        }
+
+        ItemTool tool = (ItemTool)stack.getItem();
+        String materialName = tool.getToolMaterialName();
+
+        switch(materialName) {
+            case MaterialDry.MaterialName:
+                // fall through
+            case MaterialLava.MaterialName:
+                break;
+
+            case MaterialExtendFurnace.MaterialName:
+                // fall through
+            case MaterialExtendDry.MaterialName:
+                ExtendCutBehavior.onInteract(event);
+                break;
+
+            default:
+                // nothing to do.
+        }
     }
 
 }

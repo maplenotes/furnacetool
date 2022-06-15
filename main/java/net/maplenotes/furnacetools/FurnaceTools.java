@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -43,6 +44,11 @@ public class FurnaceTools {
     @SubscribeEvent
     public void onBlockHarvest(HarvestDropsEvent event){
         EventFacade.onHarvest(event);
+    }
+
+    @SubscribeEvent
+    public void onInteract(LeftClickBlock event){
+        EventFacade.onInteract(event);
     }
 
 }
