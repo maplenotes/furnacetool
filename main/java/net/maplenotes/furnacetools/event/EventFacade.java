@@ -34,11 +34,13 @@ public class EventFacade {
                 // fall through
             case MaterialLava.MaterialName:
                 SmeltingBehavior.onHarvest(event);
+                break;
 
             case MaterialExtendFurnace.MaterialName:
                 // fall through
             case MaterialExtendDry.MaterialName:
                 ExtendCutBehavior.onHarvest(event);
+                break;
 
             default:
                 // nothing to do.
