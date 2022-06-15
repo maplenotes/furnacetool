@@ -69,15 +69,15 @@ public class ExtendCutPickaxe extends FurnacePickaxe {
         for(BlockPos target: targets) {
             
             Block targetBlock = worldIn.getBlockState(target).getBlock();
+            IBlockState targetState = worldIn.getBlockState(target);
 
             // 破壊対象(ツールで破壊しようとしているブロック)と同種のブロックは周辺ブロックとしての回収対象になる。
             // また、スニーキングして回収しようとしている場合、同種のブロックであるかに関わらずに回収対象になる。
-            if(centerBlock == targetBlock || entityLiving.isSneaking()) {
+            if((centerBlock == targetBlock && centerBlock.getMetaFromState(state) == targetBlock.getMetaFromState(targetState)) || entityLiving.isSneaking()) {
 
                 EntityPlayer player = (EntityPlayer)entityLiving;
                 
                 boolean harvestable = targetBlock.canHarvestBlock(worldIn, target, player);
-                IBlockState targetState = worldIn.getBlockState(target);
                 
                 // 破壊処理
                 targetBlock.removedByPlayer(targetState, worldIn, target, player, harvestable);
