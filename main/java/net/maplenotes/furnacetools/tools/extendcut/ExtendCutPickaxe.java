@@ -77,16 +77,17 @@ public class ExtendCutPickaxe extends FurnacePickaxe {
                 EntityPlayer player = (EntityPlayer)entityLiving;
                 
                 boolean harvestable = targetBlock.canHarvestBlock(worldIn, target, player);
+                IBlockState targetState = worldIn.getBlockState(target);
                 
                 // 破壊処理
-                targetBlock.removedByPlayer(state, worldIn, target, player, harvestable);
+                targetBlock.removedByPlayer(targetState, worldIn, target, player, harvestable);
                 if(harvestable) {
-                    targetBlock.harvestBlock(worldIn, player, target, state, worldIn.getTileEntity(target), stack);
+                    targetBlock.harvestBlock(worldIn, player, target, targetState, worldIn.getTileEntity(target), stack);
                 }
 
                 // 耐久値減少処理
-                if(state.getBlockHardness(worldIn, target) != 0.0D) {
-                    if(((ItemTool)stack.getItem()).getDestroySpeed(stack, state) <= 1.0F) {
+                if(targetState.getBlockHardness(worldIn, target) != 0.0D) {
+                    if(((ItemTool)stack.getItem()).getDestroySpeed(stack, targetState) <= 1.0F) {
                         damage += 2;
                     } else {
                         damage += 1;
