@@ -58,6 +58,7 @@ public class FurnaceToolsRegistry {
 		registry.register(Items.LavaFurnaceSword);
 
 		registry.register(Items.ExtendFurnacePickaxe);
+		registry.register(Items.EntendFurnaceShovel);
 	}
 
 	public static void RegistrationModels() {
@@ -82,6 +83,7 @@ public class FurnaceToolsRegistry {
 		ModelLoader.setCustomModelResourceLocation(Items.LavaFurnaceSword, 0, new ModelResourceLocation(Items.LavaFurnaceSword.getRegistryName(), VARIANT_INVENTRY));
 
 		ModelLoader.setCustomModelResourceLocation(Items.ExtendFurnacePickaxe, 0, new ModelResourceLocation(Items.ExtendFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.EntendFurnaceShovel, 0, new ModelResourceLocation(Items.EntendFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
 	}
 
 }
