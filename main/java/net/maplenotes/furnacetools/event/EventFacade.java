@@ -5,6 +5,7 @@ import net.maplenotes.furnacetools.materials.MaterialExtendDry;
 import net.maplenotes.furnacetools.materials.MaterialExtendFurnace;
 import net.maplenotes.furnacetools.materials.MaterialLava;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
@@ -23,12 +24,16 @@ public class EventFacade {
 
         ItemStack heldItemStack = harvester.getHeldItem(harvester.getActiveHand());
 
-        if(!(heldItemStack.getItem() instanceof ItemTool)) {
+        if(!(heldItemStack.getItem() instanceof ItemTool || heldItemStack.getItem() instanceof ItemHoe)) {
             return;
         }
 
-        ItemTool tool = (ItemTool)heldItemStack.getItem();
-        String materialName = tool.getToolMaterialName();
+        String materialName = "";
+        if(heldItemStack.getItem() instanceof ItemTool) {
+            materialName = ((ItemTool)heldItemStack.getItem()).getToolMaterialName();
+        } else {
+            materialName = ((ItemHoe)heldItemStack.getItem()).getMaterialName();
+        }
 
         switch(materialName) {
             case MaterialDry.MaterialName:
@@ -54,12 +59,16 @@ public class EventFacade {
 
         ItemStack stack = event.getItemStack();
 
-        if(!(stack.getItem() instanceof ItemTool)) {
+        if(!(stack.getItem() instanceof ItemTool || stack.getItem() instanceof ItemHoe)) {
             return;
         }
 
-        ItemTool tool = (ItemTool)stack.getItem();
-        String materialName = tool.getToolMaterialName();
+        String materialName = "";
+        if(stack.getItem() instanceof ItemTool) {
+            materialName = ((ItemTool)stack.getItem()).getToolMaterialName();
+        } else {
+            materialName = ((ItemHoe)stack.getItem()).getMaterialName();
+        }
 
         switch(materialName) {
             case MaterialDry.MaterialName:

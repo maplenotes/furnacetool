@@ -1,5 +1,6 @@
 package net.maplenotes.furnacetools.event;
 
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
@@ -21,7 +22,7 @@ public class ExtendCutBehavior {
         if(heldItem == ItemStack.EMPTY) {
             return;
         }
-        if(!(heldItem.getItem() instanceof ItemTool)) {
+        if(!(heldItem.getItem() instanceof ItemTool || heldItem.getItem() instanceof ItemHoe)) {
             return;
         }
 
