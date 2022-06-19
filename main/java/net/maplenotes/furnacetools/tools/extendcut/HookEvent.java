@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,29 +32,7 @@ public class HookEvent {
         int direction = nbt.getInteger("direction");
 
         // 回収対象ブロックを 3x3 の範囲で特定する
-        List<BlockPos> targets = new ArrayList<>();
-
-        // 各軸が -1 ～ 1 の範囲で変動する
-        for(int i = -1; i <= 1; i++ ) {
-            for(int j = -1; j <= 1; j++) {   
-                BlockPos target = null;
-
-                if(direction == 0 || direction == 1) {
-                    // Y軸は固定
-                    target = new BlockPos(orig.getX() + i, orig.getY(), orig.getZ() + j);
-                } 
-                else if (direction == 2 || direction == 3) {
-                    // z軸は固定
-                    target = new BlockPos(orig.getX() + i, orig.getY() + j, orig.getZ());
-                }
-                else {
-                    // x軸は固定
-                    target = new BlockPos(orig.getX(), orig.getY() + i, orig.getZ() + j);
-                }
-
-                targets.add(target);
-            }
-        }
+        List<BlockPos> targets = getTargetBlockPoses(orig, getDirection(direction), 3);
 
         int damage = 0;
         Block centerBlock = state.getBlock();
@@ -90,6 +69,48 @@ public class HookEvent {
         stack.damageItem(damage, entityLiving);
 
         return true;
+    }
+
+    private static EnumAxis getDirection(int directionIndex) {
+        if(directionIndex == 0 || directionIndex == 1) {
+            // axis Y
+            return EnumAxis.Y;
+        } else if (directionIndex == 2 || directionIndex == 3) {
+            return EnumAxis.Z;
+        } else if (directionIndex == 4 || directionIndex == 5) {
+            return EnumAxis.X;
+        }
+        return EnumAxis.NONE;
+    }
+
+    private static List<BlockPos> getTargetBlockPoses(BlockPos originPos, EnumAxis axis, int diameter) {
+        List<BlockPos> targets = new ArrayList<>();
+
+        int radius = (diameter - 1) / 2;
+        int start = 0 - radius;
+        int end = 0 + radius;
+
+        for(int i = start; i <= end; i++) {
+            for(int j = start; j <= end; j++) {
+                BlockPos target = null;
+                switch(axis){ 
+                    case X:
+                        target = new BlockPos(originPos.getX(), originPos.getY() + i, originPos.getZ() + j);
+                        break;
+                    case Y:
+                        target = new BlockPos(originPos.getX() + i, originPos.getY(), originPos.getZ() + j);
+                        break;
+                    case Z:
+                        target = new BlockPos(originPos.getX() + i, originPos.getY() + j, originPos.getZ());
+                        break;
+                    default:
+                        break;
+                }
+                targets.add(target);
+            }
+        }
+
+        return targets;
     }
 
 }
