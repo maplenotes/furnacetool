@@ -5,7 +5,7 @@ import net.maplenotes.furnacetools.tools.FurnaceHoe;
 
 public class ExtendCutHoe extends FurnaceHoe {
 
-	protected ExtendCutHoe(Material material) {
+	public ExtendCutHoe(Material material) {
 		super(material);
 	}
 	
