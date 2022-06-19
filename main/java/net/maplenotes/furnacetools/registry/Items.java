@@ -10,6 +10,7 @@ import net.maplenotes.furnacetools.tools.FurnaceHoe;
 import net.maplenotes.furnacetools.tools.FurnacePickaxe;
 import net.maplenotes.furnacetools.tools.FurnaceShovel;
 import net.maplenotes.furnacetools.tools.FurnaceSword;
+import net.maplenotes.furnacetools.tools.extendcut.ExtendCutHoe;
 import net.maplenotes.furnacetools.tools.extendcut.ExtendCutPickaxe;
 import net.maplenotes.furnacetools.tools.extendcut.ExtendCutShovel;
 import net.maplenotes.furnacetools.tools.smelting.SmeltingAxe;
@@ -52,4 +53,5 @@ public class Items {
 
     public static Item ExtendFurnacePickaxe = new ExtendCutPickaxe(new MaterialExtendFurnace());
     public static Item ExtendFurnaceShovel = new ExtendCutShovel(new MaterialExtendFurnace());
+    public static Item ExtendFurnaceHoe = new ExtendCutHoe(new MaterialExtendFurnace());
 }
