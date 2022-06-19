@@ -51,5 +51,5 @@ public class Items {
     public static Item LavaFurnaceHoe = new SmeltingHoe(new MaterialLava());
 
     public static Item ExtendFurnacePickaxe = new ExtendCutPickaxe(new MaterialExtendFurnace());
-    public static Item EntendFurnaceShovel = new ExtendCutShovel(new MaterialExtendFurnace());
+    public static Item ExtendFurnaceShovel = new ExtendCutShovel(new MaterialExtendFurnace());
 }
