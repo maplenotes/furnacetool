@@ -8,6 +8,9 @@ import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.nbt.NBTTagCompound;
@@ -28,11 +31,16 @@ public class HookEvent {
         if(nbt == null) {
             return true;
         }
-        // 方向 0, 1 = (上下面) 2, 3 = (南北面) 4, 5 = (東西面)
-        int direction = nbt.getInteger("direction");
 
-        // 回収対象ブロックを 3x3 の範囲で特定する
-        List<BlockPos> targets = getTargetBlockPoses(orig, getDirection(direction), 3);
+        // クワ = 小麦のみに対して 範囲 5, ショベル or つるはし = 範囲 3
+        Item heldItem = stack.getItem();
+        int range = (heldItem instanceof ItemHoe) ? 5 : 3;
+
+        // 方向 0, 1 = (上下面) 2, 3 = (南北面) 4, 5 = (東西面)
+        int direction = (heldItem instanceof ItemHoe) ? 0 : nbt.getInteger("direction");
+
+        // 回収対象ブロックを 3x3 (5x5) の範囲で特定する
+        List<BlockPos> targets = getTargetBlockPoses(orig, getDirection(direction), range);
 
         int damage = 0;
         Block centerBlock = state.getBlock();
@@ -49,6 +57,16 @@ public class HookEvent {
                 
                 boolean harvestable = targetBlock.canHarvestBlock(worldIn, target, player);
                 
+                // クワ特殊化 (クワで収穫した時、完全に成長しきった小麦/ジャガイモ/人参のみが収穫対象となる)
+                if(heldItem instanceof ItemHoe){
+                    if (!(targetBlock == Blocks.WHEAT || targetBlock == Blocks.POTATOES || targetBlock == Blocks.CARROTS)) {
+                        continue;
+                    }
+                    if(targetBlock.getMetaFromState(targetState) != 7) {
+                        continue;
+                    }
+                }
+
                 // 破壊処理
                 targetBlock.removedByPlayer(targetState, worldIn, target, player, harvestable);
                 if(harvestable) {

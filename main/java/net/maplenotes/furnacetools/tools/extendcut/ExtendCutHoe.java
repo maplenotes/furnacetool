@@ -20,7 +20,7 @@ public class ExtendCutHoe extends FurnaceHoe {
 	
 	@Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos orig, EntityLivingBase entityLiving) {
-        return true;
+        return HookEvent.onBlockDestroyed(stack, worldIn, state, orig, entityLiving);
     }
 
 	@Override
