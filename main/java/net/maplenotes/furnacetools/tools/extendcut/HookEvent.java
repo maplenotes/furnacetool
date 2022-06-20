@@ -49,6 +49,11 @@ public class HookEvent {
             Block targetBlock = worldIn.getBlockState(target).getBlock();
             IBlockState targetState = worldIn.getBlockState(target);
 
+            // 岩盤は破壊の対象外
+            if(targetBlock == Blocks.BEDROCK) {
+                continue;
+            }
+
             // 破壊対象(ツールで破壊しようとしているブロック)と同種のブロックは周辺ブロックとしての回収対象になる。
             // また、スニーキングして回収しようとしている場合、同種のブロックであるかに関わらずに回収対象になる。
             if((centerBlock == targetBlock && centerBlock.getMetaFromState(state) == targetBlock.getMetaFromState(targetState)) || entityLiving.isSneaking()) {
