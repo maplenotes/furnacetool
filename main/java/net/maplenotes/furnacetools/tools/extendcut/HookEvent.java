@@ -106,7 +106,7 @@ public class HookEvent {
         return EnumAxis.NONE;
     }
 
-    private static List<BlockPos> getTargetBlockPoses(BlockPos originPos, EnumAxis axis, int diameter) {
+    public static List<BlockPos> getTargetBlockPoses(BlockPos originPos, EnumAxis axis, int diameter) {
         List<BlockPos> targets = new ArrayList<>();
 
         int radius = (diameter - 1) / 2;
