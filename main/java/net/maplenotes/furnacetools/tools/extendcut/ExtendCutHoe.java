@@ -1,5 +1,6 @@
 package net.maplenotes.furnacetools.tools.extendcut;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.maplenotes.furnacetools.materials.Material;
@@ -60,14 +61,15 @@ public class ExtendCutHoe extends FurnaceHoe {
 			ItemHoe tool = (ItemHoe)item;
 			if(tool.getMaterialName().equals(MaterialExtendFurnace.MaterialName) || tool.getMaterialName().equals(MaterialExtendDry.MaterialName)) {
 				
-				int sowingTargetCount = this.getBlockCount(targetArea, worldIn, Blocks.FARMLAND);
+				List<BlockPos> sowingTarget = this.getPlantableBlocks(targetArea, worldIn);
+				int sowingAreaSize = sowingTarget.size();
 				Item willPlanting = null;
 
-				if(this.playerHasSatisfyPlantableItem(player, Items.WHEAT_SEEDS, sowingTargetCount)) {
+				if(this.playerHasSatisfyPlantableItem(player, Items.WHEAT_SEEDS, sowingAreaSize)) {
 					willPlanting = Items.WHEAT_SEEDS;
-				} else if(this.playerHasSatisfyPlantableItem(player, Items.POTATO, sowingTargetCount)) {
+				} else if(this.playerHasSatisfyPlantableItem(player, Items.POTATO, sowingAreaSize)) {
 					willPlanting = Items.POTATO;
-				} else if(this.playerHasSatisfyPlantableItem(player, Items.CARROT, sowingTargetCount)) {
+				} else if(this.playerHasSatisfyPlantableItem(player, Items.CARROT, sowingAreaSize)) {
 					willPlanting = Items.CARROT;
 				}
 
@@ -76,20 +78,20 @@ public class ExtendCutHoe extends FurnaceHoe {
 				}
 
 				// sow
-				this.plantingSeeds(player, willPlanting, targetArea, worldIn);
+				this.plantingSeeds(player, willPlanting, sowingTarget, worldIn);
 			}
 		}
 	}
 
 	// in target areas, how many dirt block
-	private int getBlockCount(List<BlockPos> blockPos, World world, Block targetBlock) {
-		int count = 0;
+	private List<BlockPos> getPlantableBlocks(List<BlockPos> blockPos, World world) {
+		List<BlockPos> result = new ArrayList<BlockPos>();
 		for(BlockPos pos: blockPos) {
-			if(world.getBlockState(pos).getBlock() == targetBlock) {
-				count++;
+			if(world.getBlockState(pos).getBlock() == Blocks.FARMLAND && world.isAirBlock(pos.up())) {
+				result.add(pos);
 			}
 		}
-		return count;
+		return result;
 	}
 
 	// check player has satisfy plantable item or not
