@@ -6,8 +6,19 @@
         },
         {
             "item": "minecraft:coal",
-            "data": 1,
-            "count": 4
+            "data": 1
+        },
+        {
+            "item": "minecraft:coal",
+            "data": 1
+        },
+        {
+            "item": "minecraft:coal",
+            "data": 1
+        },
+        {
+            "item": "minecraft:coal",
+            "data": 1
         }
     ],
     "result": {
