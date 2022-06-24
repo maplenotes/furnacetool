@@ -16,3 +16,9 @@ item.LavaFurnaceShovel.name=LavaShovel
 item.LavaFurnacePickaxe.name=LavaPickaxe
 item.LavaFurnaceAxe.name=LavaAxe
 item.LavaFurnaceSword.name=LavaSword
+
+item.ExtendFurnaceHoe.name=ExtendHoe
+item.ExtendFurnaceShovel.name=ExtendShovel
+item.ExtendFurnacePickaxe.name=ExtendPickaxe
+
+item.ExtensionalStone.name=ExtensionalStone
