@@ -21,4 +21,8 @@ item.ExtendFurnaceShovel.name=拡張炉ショベル
 item.ExtendFurnacePickaxe.name=拡張炉ツルハシ
 item.ExtendFurnaceHoe.name=拡張炉鍬
 
+item.ExtendDryFurnaceShovel.name=拡張稼働炉ショベル
+item.ExtendDryFurnacePickaxe.name=拡張稼働炉ツルハシ
+item.ExtendDryFurnaceHoe.name=拡張稼働炉鍬
+
 item.ExtensionalStone.name=拡張石

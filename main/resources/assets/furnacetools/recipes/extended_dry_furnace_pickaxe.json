@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "mirrored": true,
+    "group": "furnacetools",
+    "pattern": [
+        "TTT",
+        "TET",
+        "TTT"
+    ],
+    "key": {
+        "E":
+        {
+            "item": "furnacetools:material_extensional_stone"
+        },
+        "T":
+        {
+            "item": "furnacetools:dry_furnacepickaxe"
+        }
+    },
+    "result": {
+        "item": "furnacetools:extended_dry_furnacepickaxe"
+    }
+}

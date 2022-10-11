@@ -60,6 +60,10 @@ public class FurnaceToolsRegistry {
 		registry.register(Items.ExtendFurnacePickaxe);
 		registry.register(Items.ExtendFurnaceShovel);
 		registry.register(Items.ExtendFurnaceHoe);
+
+		registry.register(Items.ExtendDryFurnacePickaxe);
+		registry.register(Items.ExtendDryFurnaceShovel);
+		registry.register(Items.ExtendDryFurnaceHoe);
 	}
 
 	public static void RegistrationModels() {
@@ -86,6 +90,10 @@ public class FurnaceToolsRegistry {
 		ModelLoader.setCustomModelResourceLocation(Items.ExtendFurnacePickaxe, 0, new ModelResourceLocation(Items.ExtendFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.ExtendFurnaceShovel, 0, new ModelResourceLocation(Items.ExtendFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
 		ModelLoader.setCustomModelResourceLocation(Items.ExtendFurnaceHoe, 0, new ModelResourceLocation(Items.ExtendFurnaceHoe.getRegistryName(), VARIANT_INVENTRY));
+
+		ModelLoader.setCustomModelResourceLocation(Items.ExtendDryFurnacePickaxe, 0, new ModelResourceLocation(Items.ExtendDryFurnacePickaxe.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.ExtendDryFurnaceShovel, 0, new ModelResourceLocation(Items.ExtendDryFurnaceShovel.getRegistryName(), VARIANT_INVENTRY));
+		ModelLoader.setCustomModelResourceLocation(Items.ExtendDryFurnaceHoe, 0, new ModelResourceLocation(Items.ExtendDryFurnaceHoe.getRegistryName(), VARIANT_INVENTRY));
 	}
 
 }

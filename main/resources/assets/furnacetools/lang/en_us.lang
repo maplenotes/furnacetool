@@ -21,4 +21,8 @@ item.ExtendFurnaceHoe.name=ExtendHoe
 item.ExtendFurnaceShovel.name=ExtendShovel
 item.ExtendFurnacePickaxe.name=ExtendPickaxe
 
+item.ExtendDryFurnaceHoe.name=ExtendDryHoe
+item.ExtendDryFurnaceShovel.name=ExtendDryShovel
+item.ExtendDryFurnacePickaxe.name=ExtendDryPickaxe
+
 item.ExtensionalStone.name=ExtensionalStone

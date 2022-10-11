@@ -2,6 +2,7 @@ package net.maplenotes.furnacetools.registry;
 
 import net.maplenotes.furnacetools.FurnaceTools;
 import net.maplenotes.furnacetools.materials.MaterialDry;
+import net.maplenotes.furnacetools.materials.MaterialExtendDry;
 import net.maplenotes.furnacetools.materials.MaterialExtendFurnace;
 import net.maplenotes.furnacetools.materials.MaterialFurnace;
 import net.maplenotes.furnacetools.materials.MaterialLava;
@@ -54,4 +55,8 @@ public class Items {
     public static Item ExtendFurnacePickaxe = new ExtendCutPickaxe(new MaterialExtendFurnace());
     public static Item ExtendFurnaceShovel = new ExtendCutShovel(new MaterialExtendFurnace());
     public static Item ExtendFurnaceHoe = new ExtendCutHoe(new MaterialExtendFurnace());
+
+    public static Item ExtendDryFurnacePickaxe = new ExtendCutPickaxe(new MaterialExtendDry());
+    public static Item ExtendDryFurnaceShovel = new ExtendCutShovel(new MaterialExtendDry());
+    public static Item ExtendDryFurnaceHoe = new ExtendCutHoe(new MaterialExtendDry());
 }
