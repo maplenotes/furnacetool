@@ -60,7 +60,7 @@ public class SmeltingBehavior {
         }
 
         event.getDrops().removeIf(x -> x.getItem() == Item.getItemFromBlock(state.getBlock()) && x.getMetadata() == state.getBlock().getMetaFromState(state));
-        event.getDrops().add(targetBlock);
+        event.getDrops().add(smeltingResult);
         heldItem.damageItem(1, player);
     }
 
