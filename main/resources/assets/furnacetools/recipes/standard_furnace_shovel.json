@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "mirrored": true,
+    "group": "furnacetools",
+    "pattern": [
+        "F",
+        "W",
+        "W"
+    ],
+    "key": {
+        "F":
+        {
+            "item": "minecraft:furnace"
+        },
+        "W":
+        {
+            "type": "forge:ore_dict",
+            "ore": "logWood"
+        }
+    },
+    "result": {
+        "item": "furnacetools:standard_furnace_furnaceshovel"
+    }
+}

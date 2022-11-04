@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "mirrored": true,
+    "group": "furnacetools",
+    "pattern": [
+        "FFF",
+        " W ",
+        " W "
+    ],
+    "key": {
+        "F":
+        {
+            "item": "furnacetools:material_item_dry"
+        },
+        "W":
+        {
+            "type": "forge:ore_dict",
+            "ore": "logWood"
+        }
+    },
+    "result": {
+        "item": "furnacetools:dry_furnacepickaxe"
+    }
+}
